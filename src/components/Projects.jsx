@@ -49,33 +49,35 @@ const Projects = () => {
     }]
   ];
   return (
-    <Stack gap={3}>
-      <Typography variant={'h2'}>My Projects</Typography>
+  <Stack sx={{alignItems: 'center'}}>
+    <Stack gap={1} sx={{display: 'relative'}} width='84vw'>
+      <Typography sx={{fontFamily: '"Inter", sans-serif;', fontWeight: '800', fontSize: '3rem' }}>My Projects.</Typography>
       <Stack direction={'row'} gap={2} sx={{justifyContent: 'center'}}>
         {projects[0].map((ele, idx) => (
           <ProjectCard 
-            key={idx}
-            title={ele.title}
-            description={ele.description}
-            url={ele.url}
-            image={ele.image}
-            source={ele.source}
+          key={idx}
+          title={ele.title}
+          description={ele.description}
+          url={ele.url}
+          image={ele.image}
+          source={ele.source}
           />
-        ))}
+          ))}
       </Stack>
       <Stack direction={'row'} gap={2} sx={{justifyContent: 'center'}}>
       {projects[1].map((ele, idx) => (
-          <ProjectCard 
-            key={idx}
-            title={ele.title}
-            description={ele.description}
-            url={ele.url}
-            image={ele.image}
-            source={ele.source}
-          />
+        <ProjectCard 
+        key={idx}
+        title={ele.title}
+        description={ele.description}
+        url={ele.url}
+        image={ele.image}
+        source={ele.source}
+        />
         ))}
       </Stack>
     </Stack>
+  </Stack>
   )
 }
 

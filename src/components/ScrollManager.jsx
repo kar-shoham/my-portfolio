@@ -35,7 +35,18 @@ const ScrollManager = ({ section, onSectionChange }) => {
     if (data.scroll.current < lastScroll.current && data.scroll.current < 1 / (data.pages - 1)) {
       onSectionChange(0)
     }
-
+    if(data.scroll.current < lastScroll.current && currSection === 2){
+      onSectionChange(1)
+    }
+    if(data.scroll.current > lastScroll.current && data.scroll.current > 1 / (data.pages - 1)){
+      onSectionChange(2)
+    }
+    if(data.scroll.current < lastScroll.current && currSection === 3){
+      onSectionChange(2)
+    }
+    if(data.scroll.current > lastScroll.current && data.scroll.current > 2 * (1 / (data.pages - 1))){
+      onSectionChange(3)
+    }
   })
 
 

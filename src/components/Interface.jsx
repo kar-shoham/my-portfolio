@@ -4,12 +4,12 @@ import '../styles/Interface.css'
 import { motion } from 'framer-motion'
 import Projects from './Projects'
 import ProjectCard from './ProjectCard'
+import Contact from './Contact'
 
 const Section = ({ children, bg }) => {
   return (
     <Stack width={'100vw'} height={'100vh'}
-      sx={{ justifyContent: 'center' }}
-      paddingLeft={5} paddingRight={5} 
+      sx={{ justifyContent: 'center' }} 
       component={motion.div}
       initial={{
         opacity: 0,
@@ -168,7 +168,7 @@ const SkillsSection = () => {
     <Section>
       <Stack width={'30vw'} paddingLeft={8} gap={7}>
         <Stack gap={1.2}>
-          <Typography sx={{ fontSize: '3rem', fontWeight: '600', fontFamily: 'Titillium Web, sans-serif;' }}>Skills</Typography>
+          <Typography sx={{ fontFamily: '"Inter", sans-serif;', fontWeight: '800', fontSize: '3rem' }}>Skills</Typography>
           {skills.map((ele, idx) => (
             <Stack key={idx} component={motion.div}
               initial={{
@@ -190,7 +190,7 @@ const SkillsSection = () => {
           ))}
         </Stack>
         <Stack gap={1.2}>
-          <Typography sx={{ fontSize: '3rem', fontWeight: '600', fontFamily: 'Titillium Web, sans-serif;' }}>Languages</Typography>
+          <Typography sx={{ fontFamily: '"Inter", sans-serif;', fontWeight: '800', fontSize: '3rem'  }}>Languages</Typography>
           {languages.map((ele, idx) => (
             <Stack key={ele.name} component={motion.div}
               initial={{
@@ -218,28 +218,11 @@ const SkillsSection = () => {
 let ContactSection = () => {
   return (
     <Section>
-      <Stack direction={'row'} sx={{alignItems: 'center'}}>
-        <Stack width={'20vw'} paddingLeft={8}>
-          <Typography id={'contactme'} sx={{ fontFamily: 'Titillium Web, sans-serif;', fontWeight: '600', fontSize: '3rem' }}>Contact Me</Typography>
-          <Stack bgcolor={'white'} borderRadius={'8px'} gap={2} p={2}>
-            <div className="coolinput">
-              <label htmlFor="name" className="text">Name:</label>
-              <input type="text" placeholder="John Doe." name="name" id='name' className="input" />
-            </div>
-            <div className="coolinput">
-              <label htmlFor="email" className="text">Email:</label>
-              <input type="email" placeholder="example@abc.com" name="email" id='email' className="input" />
-            </div>
-            <div className="coolinput">
-              <label htmlFor="message" className="text">Message:</label>
-              {/* <input type="email" placeholder="example@abc.com" name="name" id='name' className="input" /> */}
-              <textarea className="input" cols={40} rows={7} id='message' placeholder='Write a message...' />
-            </div>
-            <Stack sx={{ justifyContent: 'center', alignItems: 'center' }}>
-              <button className='contact'> Submit </button>
-            </Stack>
-          </Stack>
-        </Stack>
+      <Stack sx={{alignItems: 'center', justifyContent: 'flex-end'}} width={'36vw'} gap={3}>
+        <Contact/>
+        <button className='funky' onClick={() => window.open('https://drive.google.com/file/d/10W415yaDsS94rM7Q7TfQIK5RR41x3WeI/view?usp=sharing', "_blank")}>
+          Resume
+        </button>
       </Stack>
     </Section >
   )
