@@ -1,46 +1,80 @@
 import React from 'react';
 import ProjectCard from './ProjectCard'
-import {Box, Stack} from '@mui/material'
+import {Box, Stack, Typography} from '@mui/material'
 
 
 const Projects = () => {
   const projects = [
-    {
-      title: "Wawatmos",
-      url: "https://r3f-wawatmos-final.vercel.app/",
-      image: "../../public/projects/wawatmos.jpg",
-      description: "Recreating the Atmos Awwwards website with React Three Fiber",
+    [{
+      title: "Course Hub",
+      url: "https://course-hub-x.netlify.app/",
+      image: "/projects/coursehub.png",
+      source: 'https://github.com/kar-shoham/coursehub-backend',
+      description: "A full-stack Course Hub website enabling admin functions for course management and user access to the courses through subscriptions using Razorpay.",
     },
     {
-      title: "Portfolio Baking",
-      url: "https://www.youtube.com/watch?v=YkHqpqJgLKw",
-      image: "../../public/projects/baking.jpg",
-      description: "Learn how to bake a 3D model with Blender and use it in r3f",
+      title: "Super Saga",
+      url: "https://kar-shoham.github.io/super-mango-kaboom/",
+      image: "/projects/supersaga.png",
+      source: 'https://github.com/kar-shoham/super-mango-kaboom',
+      description: "A 2D Mario-like game with three levels using Vanilla Javascript and Kaboom.js, featuring coin collection and enemy avoidance gameplay mechanics.",
     },
     {
-      title: "3D Avatar",
-      url: "https://www.youtube.com/watch?v=pGMKIyALcK0",
-      image: "../../public/projects/avatar.jpg",
-      description: "Learn how to use ReadyPlayerMe to create a 3D avatar",
+      title: "Chat Hub",
+      url: "https://chathub-x.netlify.app/",
+      image: "/projects/chathub.png",
+      source: 'https://github.com/kar-shoham/chathub-backend',
+      description: "Developed a chat application enabling users to engage in real-time one-on-one and group chats, using Web Sockets for instant messaging features. ",
+    }],
+    [{
+      title: "BlogSpot",
+      url: "https://blogspot-10.netlify.app/",
+      image: "/projects/blogspot.png",
+      source: "https://github.com/kar-shoham/blogspot-api",
+      description: "A website where users can write their own blogs after creating their account for free.The users can also view the blogs written by other users.",
     },
     {
-      title: "Kanagame",
-      url: "https://www.youtube.com/watch?v=zwNF1-lsia8",
-      image: "../../public/projects/kanagame.jpg",
-      description: "Use React Three Fiber to create a 3D game",
+      title: "Twitter API",
+      url: "https://twitter-api-mipn.onrender.com/",
+      image: "/projects/twitter.png",
+      source: 'https://github.com/kar-shoham/twitter-api',
+      description: "A comprehensive RESTful Twitter API with user account management, authentication, and tweet-related functionalities for the backend.",
     },
     {
-      title: "Loader",
-      url: "https://www.youtube.com/watch?v=L12wIvuZTOY",
-      image: "../../public/projects/loader.jpg",
-      description: "Create a loading screen for your r3f projects",
-    },
+      title: "WhatsApp GPT",
+      url: "https://blogspot-10.netlify.app/",
+      image: "/projects/whatsappbot.png",
+      source: 'https://github.com/kar-shoham/whatsapp-gpt',
+      description: "A WhatsApp-integrated project utilizing, WhatsApp Web JS, and Google Palm 2 enabling users to access AI assistance within WhatsApp.",
+    }]
   ];
   return (
-    <Stack direction={'row'} gap={2} sx={{justifyContent: 'center'}}>
-      {projects.map(ele => (
-        <ProjectCard/>
-      ))}
+    <Stack gap={3}>
+      <Typography variant={'h2'}>My Projects</Typography>
+      <Stack direction={'row'} gap={2} sx={{justifyContent: 'center'}}>
+        {projects[0].map((ele, idx) => (
+          <ProjectCard 
+            key={idx}
+            title={ele.title}
+            description={ele.description}
+            url={ele.url}
+            image={ele.image}
+            source={ele.source}
+          />
+        ))}
+      </Stack>
+      <Stack direction={'row'} gap={2} sx={{justifyContent: 'center'}}>
+      {projects[1].map((ele, idx) => (
+          <ProjectCard 
+            key={idx}
+            title={ele.title}
+            description={ele.description}
+            url={ele.url}
+            image={ele.image}
+            source={ele.source}
+          />
+        ))}
+      </Stack>
     </Stack>
   )
 }
