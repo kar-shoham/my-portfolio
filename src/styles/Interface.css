@@ -255,11 +255,17 @@ body, html {
   font-weight: 600;
   width: 44%;
   padding: 5px;
+  color: 'white';
+  background-color: #48495b;
+  border-radius: 3px;
+  color: white;
 }
 .btn:hover{
   cursor: pointer;
 }
-
+.btn:disabled{
+  background-color: #6c6d89;
+}
 
 .project-btn{
   height: 40px;

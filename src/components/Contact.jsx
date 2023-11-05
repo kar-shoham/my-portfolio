@@ -15,20 +15,20 @@ const Contact = () => {
     updateInputData({ name: '', email: '', message: '' })
   }
   return (
-    <Stack width={'25vw'}>
+    <Stack width={'22vw'} borderRadius={'8px'}>
       <Typography id={'contactme'} sx={{ fontFamily: '"Inter", sans-serif;', fontWeight: '800', fontSize: '3rem' }}>Contact Me.</Typography>
       <form ref={form} onSubmit={(e) => submitHandler(e)}>
-        <Stack bgcolor={'white'} borderRadius={'8px'} gap={3} p={3}>
+        <Stack bgcolor={'#b5b7e5'} borderRadius={'8px'} gap={3} p={3}>
           <Stack className='input-field' gap={1}>
-            <label className='input-label' htmlFor="name">Name:</label>
+            <label className='input-label' htmlFor="name" style={{color: 'white'}}>Name:</label>
             <input value={inputData.name} onChange={(e) => onFieldUpdate(e)} autoComplete="off" className='input' type="text" name="name" id="name" placeholder="What's your good name?" />
           </Stack>
           <Stack className='input-field' gap={1}>
-            <label className='input-label' htmlFor="email">Email:</label>
+            <label className='input-label' htmlFor="email" style={{color: 'white'}}>Email:</label>
             <input value={inputData.email} onChange={(e) => onFieldUpdate(e)} autoComplete="off" className='input' type="email" name="email" id="email" placeholder="What's your web address?" />
           </Stack>
           <Stack className='input-field' gap={1}>
-            <label className='input-label' htmlFor="email">Message:</label>
+            <label className='input-label' htmlFor="email" style={{color: 'white'}}>Message:</label>
             <textarea value={inputData.message} onChange={(e) => onFieldUpdate(e)} className='textarea-input' name="message" id="message" placeholder="What's your want to say?" rows="7" />
           </Stack>
           <Stack>
