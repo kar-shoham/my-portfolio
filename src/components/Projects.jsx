@@ -1,6 +1,6 @@
 import React from 'react';
 import ProjectCard from './ProjectCard'
-import {Box, Stack, Typography} from '@mui/material'
+import { Box, Stack, Typography } from '@mui/material'
 
 
 const Projects = () => {
@@ -49,35 +49,40 @@ const Projects = () => {
     }]
   ];
   return (
-  <Stack sx={{alignItems: 'center'}}>
-    <Stack gap={1} sx={{display: 'relative'}} width='84vw'>
-      <Typography sx={{fontFamily: '"Inter", sans-serif;', fontWeight: '800', fontSize: '3rem' }}>My Projects.</Typography>
-      <Stack direction={'row'} gap={2} sx={{justifyContent: 'center'}}>
-        {projects[0].map((ele, idx) => (
-          <ProjectCard 
-          key={idx}
-          title={ele.title}
-          description={ele.description}
-          url={ele.url}
-          image={ele.image}
-          source={ele.source}
-          />
+    <Stack sx={{ alignItems: 'center' }}>
+      <Stack gap={1} sx={{ display: 'relative' }} width='84vw'>
+        <Typography sx={{ fontFamily: '"Inter", sans-serif;', fontWeight: '800', fontSize: '3rem' }}>My Projects.</Typography>
+        <Stack width={'7vw'}>
+          <button className='funky' onClick={() => window.open('https://github.com/kar-shoham', "_blank")}>
+            GitHub
+          </button>
+        </Stack>
+        <Stack direction={'row'} gap={2} sx={{ justifyContent: 'center' }}>
+          {projects[0].map((ele, idx) => (
+            <ProjectCard
+              key={idx}
+              title={ele.title}
+              description={ele.description}
+              url={ele.url}
+              image={ele.image}
+              source={ele.source}
+            />
           ))}
-      </Stack>
-      <Stack direction={'row'} gap={2} sx={{justifyContent: 'center'}}>
-      {projects[1].map((ele, idx) => (
-        <ProjectCard 
-        key={idx}
-        title={ele.title}
-        description={ele.description}
-        url={ele.url}
-        image={ele.image}
-        source={ele.source}
-        />
-        ))}
+        </Stack>
+        <Stack direction={'row'} gap={2} sx={{ justifyContent: 'center' }}>
+          {projects[1].map((ele, idx) => (
+            <ProjectCard
+              key={idx}
+              title={ele.title}
+              description={ele.description}
+              url={ele.url}
+              image={ele.image}
+              source={ele.source}
+            />
+          ))}
+        </Stack>
       </Stack>
     </Stack>
-  </Stack>
   )
 }
 
