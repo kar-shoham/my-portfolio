@@ -65,10 +65,9 @@ export const Experience = ({ menuOpened }) => {
 
     state.camera.position.x = cameraPositionX.get()
     state.camera.lookAt(cameraLookAtX.get(), 0, 0)
-
-    // console.log(viewport.height)
   })
 
+  
   return (
     <>
       {/* <OrbitControls /> */}
@@ -160,7 +159,11 @@ export const Experience = ({ menuOpened }) => {
           </mesh>
         </Float>
       </motion.group>
-      <motion.mesh scale={[0.02, 0.02, 0.02]} position={[1.5, -23.2, 3]}>
+      <motion.mesh
+        scale={[0.02, 0.02, 0.02]}
+        position={[1.5, -23.2, 3]}
+        rotation-y={-11.5}
+      >
         <Earth />
       </motion.mesh>
       {/* <Projects/> */}

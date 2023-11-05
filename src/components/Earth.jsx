@@ -7,22 +7,6 @@ import { useGLTF, PerspectiveCamera, useFBX } from "@react-three/drei";
 
 export function Earth(props) {
   const { nodes, materials } = useGLTF("models/earth.gltf");
-  const { animations: rotateEarth } = useFBX("animations/earth.fbx")
-
-  // rotateEarth[0].name = "Earth"
-
-  // const { actions } = useAnimations([
-  //   rotateEarth[0]
-  // ],
-  //   group
-  // )
-
-  // useEffect(() => {
-  //   actions[animation].reset().fadeIn(0.5).play()
-  //   return () => {
-  //     actions[animation].reset().fadeOut(0.5)
-  //   }
-  // }, [animation])
 
   return (
     <group {...props} dispose={null}>
